@@ -77,11 +77,11 @@ export const AutoSlider: React.FC<AutoSliderProps> = ({ items }) => {
               </button>
 
               {/* Image Section */}
-              <div className="w-full md:w-1/2 h-64 md:h-[600px]">
+              <div className="w-full md:w-1/2 h-64 md:h-[600px] bg-black/5 flex items-center justify-center p-4">
                 <img
                   src={selectedItem.url}
                   alt={selectedItem.caption}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain drop-shadow-md rounded-lg"
                 />
               </div>
 

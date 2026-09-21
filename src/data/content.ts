@@ -156,56 +156,56 @@ export const siteContent: BirthdaySiteContent = {
     {
       id: "m1",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1529156069898-49953eb1b5ae?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/ga1.jpeg",
       caption: "The days that turn into nights",
       date: "Endless Summers"
     },
     {
       id: "m2",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/ga2.jpeg",
       caption: "Quiet conversations",
       date: "Autumn Evenings"
     },
     {
       id: "m3",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1473280025148-643f9b0cbac2?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/ga3.jpeg",
       caption: "Wandering aimlessly, but together",
       date: "Winter Escapes"
     },
     {
       id: "m4",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/ga4.jpeg",
       caption: "Just us being us",
       date: "Spring Renewals"
     },
     {
       id: "m5",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/ga5.jpeg",
       caption: "The world is ours",
       date: "A Day to Remember"
     },
     {
       id: "m6",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/ga6.jpeg",
       caption: "Golden hour glow",
       date: "Perfect Sunsets"
     },
     {
       id: "m7",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/ga7.jpeg",
       caption: "A new adventure",
       date: "Spontaneous Days"
     },
     {
       id: "m8",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/ga8.jpeg",
       caption: "Our secret spot",
       date: "Quiet Mornings"
     }
@@ -215,7 +215,7 @@ export const siteContent: BirthdaySiteContent = {
     {
       id: "sm1",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1473280025148-643f9b0cbac2?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/tl1.jpeg",
       date: "14th February",
       caption: "The start of something beautiful",
       description: "I still remember this day so vividly. The air was crisp, and we spent hours just talking about everything and nothing. It felt like time had completely stopped. Little did I know, this simple afternoon would become one of the most cherished memories I hold in my heart."
@@ -223,7 +223,7 @@ export const siteContent: BirthdaySiteContent = {
     {
       id: "sm2",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/tl2.jpeg",
       date: "22nd May",
       caption: "Quiet evenings",
       description: "There is a profound comfort in the silence we share. On this particular evening, we sat together watching the colors of the sky shift and fade into dusk. We didn't need to speak; the simple presence of each other was enough to make the entire world feel perfectly at peace."
@@ -231,7 +231,7 @@ export const siteContent: BirthdaySiteContent = {
     {
       id: "sm3",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1529156069898-49953eb1b5ae?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/tl3.jpeg",
       date: "10th August",
       caption: "Endless laughter",
       description: "This picture captures the exact moment my stomach hurt from laughing so hard. You have this incredible ability to turn the most mundane situations into absolute comedy gold. Even now, looking at this photo makes me smile and brings back the echo of our laughter from that unforgettable summer day."
@@ -239,7 +239,7 @@ export const siteContent: BirthdaySiteContent = {
     {
       id: "sm4",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/tl4.jpeg",
       date: "3rd November",
       caption: "Cozy coffee dates",
       description: "We found this tiny, hidden café and instantly claimed it as our own. The smell of freshly brewed espresso and the warmth of the small corner table made it the perfect escape from the rain outside. It's the small, quiet moments like these that I treasure the absolute most."
@@ -247,7 +247,7 @@ export const siteContent: BirthdaySiteContent = {
     {
       id: "sm5",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1542361345-89e58247f2d5?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/tl5.jpeg",
       date: "New Year's Eve",
       caption: "A fresh start",
       description: "Ringing in the new year with you by my side was the only way I wanted to celebrate. As the fireworks lit up the midnight sky, all I could think about was how incredibly lucky I am to have you in my life. Here's to making a million more memories."
@@ -255,7 +255,7 @@ export const siteContent: BirthdaySiteContent = {
     {
       id: "sm6",
       type: "photo",
-      url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop",
+      url: "/gallery/tl6.jpeg",
       date: "Spontaneous adventures",
       caption: "Getting lost together",
       description: "We had no map, no plan, and absolutely no idea where we were going. Yet somehow, it turned into one of the best trips we've ever taken. It proved what I've always known: it really doesn't matter where I am, as long as I am there with you."

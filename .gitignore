@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private Assets
+public/gallery/*
+!public/gallery/.gitkeep
+public/assets/signature.jpg

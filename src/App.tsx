@@ -27,7 +27,7 @@ function App() {
       
       <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
       
-      <main className="h-screen overflow-y-auto">
+      <main className="min-h-screen">
         <AnimatePresence mode="wait">
           {currentPage === 'home' && (
             <motion.div key="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

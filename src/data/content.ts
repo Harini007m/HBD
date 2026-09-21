@@ -216,49 +216,49 @@ export const siteContent: BirthdaySiteContent = {
       id: "sm1",
       type: "photo",
       url: "/gallery/tl1.jpeg",
-      date: "14th February",
-      caption: "The start of something beautiful",
-      description: "I still remember this day so vividly. The air was crisp, and we spent hours just talking about everything and nothing. It felt like time had completely stopped. Little did I know, this simple afternoon would become one of the most cherished memories I hold in my heart."
+      date: "May 3rd, 2025",
+      caption: "Farewell to the Seniors",
+      description: "This day was bittersweet as we gathered to bid farewell to our seniors. Amidst all the goodbyes, dressing up, and endless photo sessions, we created memories that will always hold a special place in my heart. It was a beautiful day celebrating the people we looked up to."
     },
     {
       id: "sm2",
       type: "photo",
       url: "/gallery/tl2.jpeg",
-      date: "22nd May",
-      caption: "Quiet evenings",
-      description: "There is a profound comfort in the silence we share. On this particular evening, we sat together watching the colors of the sky shift and fade into dusk. We didn't need to speak; the simple presence of each other was enough to make the entire world feel perfectly at peace."
+      date: "May 30th, 2025",
+      caption: "My Birthday Celebrations",
+      description: "My special day became infinitely better just by having you all around to celebrate it with me. The laughs, the warmth, and the joy of sharing my birthday with my favorite people made it a day I will cherish forever. Thank you for making me feel so incredibly loved."
     },
     {
       id: "sm3",
       type: "photo",
       url: "/gallery/tl3.jpeg",
-      date: "10th August",
-      caption: "Endless laughter",
-      description: "This picture captures the exact moment my stomach hurt from laughing so hard. You have this incredible ability to turn the most mundane situations into absolute comedy gold. Even now, looking at this photo makes me smile and brings back the echo of our laughter from that unforgettable summer day."
+      date: "October 15th, 2025",
+      caption: "Escaping the Record Queue",
+      description: "We were all supposed to be getting our records signed, but the queue was absolutely massive! Instead of standing there forever, the three of us sneaked away just to snap this picture. It's funny how the most mundane college chores always turn into our favorite random little adventures."
     },
     {
       id: "sm4",
       type: "photo",
       url: "/gallery/tl4.jpeg",
-      date: "3rd November",
-      caption: "Cozy coffee dates",
-      description: "We found this tiny, hidden café and instantly claimed it as our own. The smell of freshly brewed espresso and the warmth of the small corner table made it the perfect escape from the rain outside. It's the small, quiet moments like these that I treasure the absolute most."
+      date: "May 3rd, 2025",
+      caption: "More Farewell Memories",
+      description: "Another beautiful snapshot from the seniors' farewell! The energy that day was unmatched—a mix of happy tears, excitement for the future, and us just enjoying the moment together. Every time I look at pictures from this day, I'm reminded of how lucky I am to have this group."
     },
     {
       id: "sm5",
       type: "photo",
       url: "/gallery/tl5.jpeg",
-      date: "New Year's Eve",
-      caption: "A fresh start",
-      description: "Ringing in the new year with you by my side was the only way I wanted to celebrate. As the fireworks lit up the midnight sky, all I could think about was how incredibly lucky I am to have you in my life. Here's to making a million more memories."
+      date: "May 31st, 2025",
+      caption: "The Day After & River Trips",
+      description: "The birthday celebrations didn't stop! I invited everyone over to my house the next day. We ended up visiting the beautiful river nearby, just hanging out, laughing endlessly, and taking in the peaceful scenery. It was the absolute perfect way to wrap up my birthday weekend with friends."
     },
     {
       id: "sm6",
       type: "photo",
       url: "/gallery/tl6.jpeg",
-      date: "Spontaneous adventures",
-      caption: "Getting lost together",
-      description: "We had no map, no plan, and absolutely no idea where we were going. Yet somehow, it turned into one of the best trips we've ever taken. It proved what I've always known: it really doesn't matter where I am, as long as I am there with you."
+      date: "September 21st, 2025",
+      caption: "Megaa's Birthday at Mandi",
+      description: "After our IV trip, a few of us stayed back at the college hostel just so we could celebrate Megaa's birthday the very next day! We all went out to Mandi, ate amazing food, and had the best time celebrating her. This picture perfectly captures the fun we had!"
     }
   ],
 
@@ -276,12 +276,12 @@ export const siteContent: BirthdaySiteContent = {
   },
 
   videoMemories: [
-    {
-      id: "v1",
-      url: "https://www.w3schools.com/html/mov_bbb.mp4",
-      caption: "When we couldn't stop laughing",
-      date: "That One Perfect Day"
-    }
+    { id: "v1", url: "/gallery/v1.mp4", caption: "The SWAG!", date: "Special Moment" },
+    { id: "v2", url: "/gallery/v2.mp4", caption: "Caught on Camera 2", date: "Special Moment" },
+    { id: "v3", url: "/gallery/v3.mp4", caption: "Caught on Camera 3", date: "Special Moment" },
+    { id: "v4", url: "/gallery/v4.mp4", caption: "Caught on Camera 4", date: "Special Moment" },
+    { id: "v5", url: "/gallery/v5.mp4", caption: "Caught on Camera 5", date: "Special Moment" },
+    { id: "v6", url: "/gallery/v6.mp4", caption: "Caught on Camera 6", date: "Special Moment" }
   ],
 
   timeline: [

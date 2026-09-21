@@ -31,10 +31,10 @@ export const HeroSection: React.FC<HeroProps> = ({ onNavigate }) => {
         
         <div className="flex gap-4">
           <button 
-            onClick={() => onNavigate?.('cake')}
+            onClick={() => onNavigate?.('memories')}
             className="bg-cocoa text-white px-8 py-3 rounded-full font-sans font-medium hover:bg-cocoa/90 transition-colors shadow-lg"
           >
-            Cut the Cake
+            Memories
           </button>
           <button 
             onClick={() => onNavigate?.('letter')}

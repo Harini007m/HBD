@@ -8,29 +8,6 @@ interface ExpandableGalleryProps {
 
 export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({ images, className = '' }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
-  const openImage = (index: number) => {
-    setSelectedIndex(index);
-  };
-
-  const closeImage = () => {
-    setSelectedIndex(null);
-  };
-
-  const goToNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % images.length);
-    }
-  };
-
-  const goToPrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
-    }
-  };
 
   const getFlexValue = (index: number) => {
     if (hoveredIndex === null) {
@@ -46,13 +23,12 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({ images, cl
         {images.map((image, index) => (
           <motion.div
             key={index}
-            className="relative cursor-pointer overflow-hidden rounded-md"
+            className="relative overflow-hidden rounded-md"
             style={{ flex: 1 }}
             animate={{ flex: getFlexValue(index) }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            onClick={() => openImage(index)}
           >
             <img
               src={image}
@@ -69,104 +45,6 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({ images, cl
         ))}
       </div>
 
-      {/* Expanded View Modal */}
-      <AnimatePresence>
-        {selectedIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center dark:bg-black bg-white bg-opacity-95 p-4"
-            onClick={closeImage}
-          >
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 z-10 text-slate-200 hover:text-white transition-colors"
-              onClick={closeImage}
-            >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            {/* Previous Button */}
-            {images.length > 1 && (
-              <button
-                className="absolute left-4 z-10 text-slate-200 hover:text-white transition-colors"
-                onClick={goToPrev}
-              >
-                <svg
-                  className="w-10 h-10"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-            )}
-
-            {/* Image */}
-            <motion.div
-              className="relative max-w-5xl max-h-[90vh] w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <motion.img
-                key={selectedIndex}
-                src={images[selectedIndex]}
-                alt={`Gallery image ${selectedIndex + 1}`}
-                className="w-full h-full object-contain rounded-md"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
-
-            {/* Next Button */}
-            {images.length > 1 && (
-              <button
-                className="absolute right-4 z-10 text-slate-800 hover:text-slate-500 transition-colors"
-                onClick={goToNext}
-              >
-                <svg
-                  className="w-10 h-10"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            )}
-
-            {/* Image Counter */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-slate-800 text-sm dark:bg-black bg-white bg-opacity-50 px-4 py-2 rounded-md">
-              {selectedIndex + 1} / {images.length}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

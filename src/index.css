@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-cocoa font-sans antialiased;
+    background: radial-gradient(circle at top left, #fff 0%, #f9f5f0 35%, #f8edeb 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 15px rgba(216, 180, 160, 0.5); 
+  }
+  
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(22px);
+    box-shadow: 0 24px 70px rgba(62, 50, 50, 0.12);
+  }
+  
+  .glass-panel-dark {
+    @apply bg-cocoa/90 backdrop-blur-2xl border border-cocoa/20 shadow-2xl text-warm-white;
+  }
+
+  .animated-gradient-bg {
+    background: radial-gradient(circle at top left, #fff 0%, #f9f5f0 35%, #f8edeb 100%);
+  }
+
+  .floating-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+}

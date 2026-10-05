@@ -146,7 +146,7 @@ export const LetterBlock: React.FC<LetterBlockProps> = ({ heading, paragraphs })
                     transition: { staggerChildren: 0.08, delayChildren: 0.8 }
                   }
                 }}
-                className="font-script text-3xl md:text-4xl text-cocoa/90"
+                className="font-script text-2xl md:text-3xl text-cocoa/90"
               >
                 {Array.from("With Love,\nHARINI").map((char, index) => (
                   char === '\n' ? <br key={`br-${index}`} /> :

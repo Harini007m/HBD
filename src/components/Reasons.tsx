@@ -64,7 +64,7 @@ const BackgroundElements = () => {
       {whispers.map((text, i) => (
         <motion.div
           key={`whisper-${i}`}
-          className="absolute font-script text-4xl md:text-6xl text-[#9f6a59]/15 whitespace-nowrap"
+          className="absolute font-script text-2xl md:text-4xl text-[#9f6a59]/15 whitespace-nowrap"
           style={{
             top: `${18 + (i * 18)}%`,
             left: i % 2 === 0 ? '8%' : 'auto',
@@ -111,7 +111,7 @@ const ParallaxSection = ({ reason, idx }: { reason: typeof coreReasons[0], idx: 
           transition={{ duration: 1, delay: 0.4 }}
           style={{ y: useTransform(scrollYProgress, [0, 1], [150, -150]) }}
           className={`absolute top-[10%] md:top-[20%] ${idx % 2 === 0 ? 'right-[5%] lg:right-[15%]' : 'left-[5%] lg:left-[15%]'} 
-            z-0 w-32 md:w-56 p-2 md:p-3 pb-8 md:pb-12 bg-[#fdfbf9] shadow-2xl shadow-cocoa/10 rounded-sm border border-cocoa/5 hidden md:block`}
+            z-30 w-32 md:w-56 p-2 md:p-3 pb-8 md:pb-12 bg-[#fdfbf9] shadow-2xl shadow-cocoa/10 rounded-sm border border-cocoa/5 hidden md:block`}
         >
           {/* Washi Tape */}
           <div className="absolute top-[-10px] left-1/2 -translate-x-1/2 w-16 md:w-20 h-5 md:h-6 bg-[#eae1d8]/90 shadow-sm -rotate-2 z-40 opacity-90 backdrop-blur-sm"></div>
@@ -140,7 +140,7 @@ const ParallaxSection = ({ reason, idx }: { reason: typeof coreReasons[0], idx: 
         {/* Text Content */}
         <motion.div 
           style={{ y: yText, opacity, scale }}
-          className={`relative z-20 glass-panel p-10 md:p-14 rounded-3xl max-w-xl text-center md:text-left ${idx % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}
+          className={`relative z-20 glass-panel p-10 md:py-14 md:px-12 ${idx % 2 === 0 ? 'md:pr-32 lg:pr-40 md:order-2' : 'md:pl-32 lg:pl-40 md:order-1'} rounded-3xl max-w-xl lg:max-w-2xl text-center md:text-left`}
         >
 
           <div className="relative z-10">

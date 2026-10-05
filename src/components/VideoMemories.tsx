@@ -12,18 +12,18 @@ export const VideoMemories: React.FC<{ videos: VideoItem[] }> = ({ videos }) => 
     <section className="py-24 px-4 bg-cream">
       <h2 className="text-5xl md:text-6xl font-serif text-espresso text-center mb-16">Caught on Camera</h2>
       
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         {videos.map((video, idx) => (
           <motion.div
             key={idx}
-            className="bg-white/60 backdrop-blur-md border-4 border-white rounded-3xl p-4 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group"
+            className="bg-white/60 backdrop-blur-md border-2 border-white rounded-2xl p-2 shadow-lg hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.1 }}
             onClick={() => setSelectedVideo(video)}
           >
-            <div className="relative h-72 w-full bg-black/5 flex items-center justify-center transition-all mb-4 rounded-2xl overflow-hidden shadow-inner border border-black/5">
+            <div className="relative h-48 sm:h-56 w-full bg-black/5 flex items-center justify-center transition-all mb-3 rounded-xl overflow-hidden shadow-inner border border-black/5">
                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
                <video src={video.url} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity absolute inset-0" />
                <div className="relative z-20 group-hover:scale-125 transition-transform duration-300">
@@ -31,8 +31,8 @@ export const VideoMemories: React.FC<{ videos: VideoItem[] }> = ({ videos }) => 
                </div>
             </div>
             
-            <div className="px-2 pb-2 text-center">
-               <p className="font-serif italic text-2xl text-espresso/90 group-hover:text-espresso transition-colors">{video.caption}</p>
+            <div className="px-2 pb-1 text-center">
+               <p className="font-serif italic text-lg sm:text-xl text-espresso/90 group-hover:text-espresso transition-colors line-clamp-1">{video.caption}</p>
             </div>
           </motion.div>
         ))}

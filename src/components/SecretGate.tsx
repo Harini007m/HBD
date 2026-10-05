@@ -30,49 +30,71 @@ export const SecretGate: React.FC<SecretGateProps> = ({
   };
 
   return (
-    <section className="py-32 px-4 bg-slate-900 text-white min-h-[70vh] flex flex-col justify-center items-center relative z-20">
+    <section className="min-h-screen px-4 flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-b from-[#fdfbf9] via-[#f9f3ef] to-[#f4ebe1]">
+      {/* Background orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-rose/20 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-champagne/30 blur-[100px] pointer-events-none" />
+
       <motion.div 
-        className="max-w-md w-full bg-slate-800 p-10 rounded-2xl shadow-2xl text-center border border-slate-700"
+        className="max-w-md w-full bg-white/70 backdrop-blur-md p-10 rounded-3xl shadow-xl text-center border border-[#eae1d8]/60 relative z-10"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <div className="mx-auto w-20 h-20 bg-slate-700 rounded-full flex items-center justify-center mb-8 shadow-inner">
-          {status === 'success' ? <Unlock size={40} className="text-green-400" /> : <Lock size={40} className="text-rose-gold" />}
-        </div>
+        {/* Lock icon */}
+        <motion.div
+          animate={{ scale: status === 'success' ? [1, 1.2, 1] : 1 }}
+          transition={{ duration: 0.4 }}
+          className="mx-auto w-20 h-20 bg-gradient-to-br from-[#eae1d8] to-[#f4ebe1] rounded-full flex items-center justify-center mb-8 shadow-inner border border-[#d4b4aa]/30"
+        >
+          {status === 'success' 
+            ? <Unlock size={36} className="text-[#9f6a59]" /> 
+            : <Lock size={36} className="text-[#9f6a59]" />}
+        </motion.div>
         
-        <h3 className="text-4xl font-cinzel mb-4">Secret Vault</h3>
-        <p className="font-sans text-slate-400 mb-8 text-sm uppercase tracking-widest">{clueText}</p>
+        <p className="font-script text-3xl text-[#9f6a59] mb-2">Secret Vault</p>
+        <p className="font-sans text-cocoa/50 mb-8 text-xs uppercase tracking-widest">{clueText}</p>
         
         <input 
           type="password"
           value={code}
           onChange={e => setCode(e.target.value)}
-          placeholder="ENTER CODE"
-          className="w-full bg-slate-900 border border-slate-600 rounded-md py-4 px-4 text-center font-sans text-2xl tracking-[0.5em] mb-6 focus:outline-none focus:border-rose-gold transition-colors text-white placeholder-slate-600"
+          placeholder="enter our code..."
+          className="w-full bg-[#fdfbf9] border border-[#eae1d8] rounded-xl py-4 px-4 text-center font-sans text-xl tracking-[0.4em] mb-6 focus:outline-none focus:border-[#9f6a59] transition-colors text-cocoa placeholder-cocoa/20"
           onKeyDown={e => e.key === 'Enter' && handleUnlock()}
         />
         
-        <button 
+        <motion.button 
           onClick={handleUnlock}
-          className="w-full bg-rose-gold text-white py-4 rounded-md font-sans font-bold text-lg tracking-wider hover:bg-accent-red transition-colors shadow-md"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full bg-gradient-to-r from-[#9f6a59] to-[#b32435] text-white py-4 rounded-xl font-sans font-medium text-base tracking-wider hover:shadow-lg hover:shadow-[#9f6a59]/20 transition-all"
         >
           {unlockButtonText}
-        </button>
+        </motion.button>
         
         <div className="h-8 mt-4 flex items-center justify-center">
           {status === 'error' && (
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-red-400 font-sans font-medium">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[#b32435] font-sans text-sm">
               {wrongCodeMessage}
             </motion.p>
           )}
           {status === 'success' && (
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-green-400 font-sans font-medium">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[#9f6a59] font-sans text-sm">
               {correctCodeMessage}
             </motion.p>
           )}
         </div>
       </motion.div>
+
+      {/* Floating script text */}
+      <motion.p
+        animate={{ y: [0, -10, 0], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-16 font-script text-2xl text-[#9f6a59]/30 pointer-events-none"
+      >
+        only you know the way in...
+      </motion.p>
     </section>
   );
 };

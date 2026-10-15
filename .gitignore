@@ -23,7 +23,13 @@ dist-ssr
 *.sln
 *.sw?
 
+# Env files
+.env
+.env.*
+!.env.example
+
 # Private Assets
 public/gallery/*
 !public/gallery/.gitkeep
+!public/gallery/Christmas wind chimes.json
 public/assets/signature.jpg

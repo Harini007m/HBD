@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
+import { WindChime } from './WindChime';
 
 interface CakeProps {
   prompt: string[];
@@ -172,6 +173,31 @@ export const InteractiveCake: React.FC<CakeProps> = ({ prompt, wishMessage, post
           </motion.div>
         )}
       </div>
+
+      {/* Wind Chimes on both sides displayed after cutting the cake */}
+      {candlesBlown && (
+        <>
+          {/* Left Wind Chime */}
+          <motion.div
+            initial={{ opacity: 0, y: -70 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
+            className="absolute top-0 left-0 sm:left-4 md:left-8 lg:left-14 w-32 sm:w-44 md:w-56 lg:w-64 max-w-[28vw] pointer-events-none z-20"
+          >
+            <WindChime />
+          </motion.div>
+
+          {/* Right Wind Chime */}
+          <motion.div
+            initial={{ opacity: 0, y: -70 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
+            className="absolute top-0 right-0 sm:right-4 md:right-8 lg:right-14 w-32 sm:w-44 md:w-56 lg:w-64 max-w-[28vw] pointer-events-none z-20"
+          >
+            <WindChime mirrored />
+          </motion.div>
+        </>
+      )}
     </section>
   );
 };

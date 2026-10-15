@@ -7,18 +7,15 @@ import { MemoryGallery } from './components/MemoryGallery';
 import { VideoMemories } from './components/VideoMemories';
 import { FloatingHearts } from './components/FloatingHearts';
 import { InteractiveCake } from './components/InteractiveCake';
-import { SecretGate } from './components/SecretGate';
-import { PrivateFolder } from './components/PrivateFolder';
 import { MusicPlayer } from './components/MusicPlayer';
 import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
 import { Reasons } from './components/Reasons';
 
-export type Page = 'home' | 'memories' | 'reasons' | 'letter' | 'cake' | 'final';
+export type Page = 'home' | 'memories' | 'reasons' | 'letter' | 'cake';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
-  const [isUnlocked, setIsUnlocked] = useState(false);
 
   return (
     <div className="min-h-screen font-sans animated-gradient-bg overflow-hidden text-cocoa">
@@ -69,23 +66,6 @@ function App() {
                 wishMessage={siteContent.cake.wishMessage}
                 postBlowMessage={siteContent.cake.postBlowMessage}
               />
-            </motion.div>
-          )}
-          
-          {currentPage === 'final' && (
-            <motion.div key="final" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="pt-24">
-               {!isUnlocked ? (
-                 <SecretGate 
-                   clueText={siteContent.secret.clueText}
-                   unlockButtonText={siteContent.secret.unlockButtonText}
-                   codeHash={siteContent.secret.codeHash}
-                   wrongCodeMessage={siteContent.secret.wrongCodeMessage}
-                   correctCodeMessage={siteContent.secret.correctCodeMessage}
-                   onUnlock={() => setIsUnlocked(true)}
-                 />
-               ) : (
-                 <PrivateFolder />
-               )}
             </motion.div>
           )}
         </AnimatePresence>

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 interface HeroProps {
-  onNavigate?: (page: 'home' | 'memories' | 'reasons' | 'letter' | 'cake' | 'final') => void;
+  onNavigate?: (page: 'home' | 'memories' | 'reasons' | 'letter' | 'cake') => void;
 }
 
 export const HeroSection: React.FC<HeroProps> = ({ onNavigate }) => {

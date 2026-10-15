@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type Page = 'home' | 'memories' | 'reasons' | 'letter' | 'cake' | 'final';
+export type Page = 'home' | 'memories' | 'reasons' | 'letter' | 'cake';
 
 interface NavbarProps {
   currentPage: Page;
@@ -13,7 +13,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: 'reasons', label: 'Reasons' },
     { id: 'letter', label: 'Letter' },
     { id: 'cake', label: 'Cake' },
-    { id: 'final', label: 'Final' },
   ];
 
   return (

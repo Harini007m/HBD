@@ -14,7 +14,7 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <div 
-      className="fixed z-[100] pointer-events-none rounded-full"
+      className="hidden md:block fixed z-[100] pointer-events-none rounded-full"
       style={{
         width: '280px',
         height: '280px',

@@ -107,7 +107,7 @@ export const InteractiveCake: React.FC<CakeProps> = ({ prompt, wishMessage, post
   };
 
   return (
-    <section className="py-32 px-4 bg-gradient-to-b from-[#fdfbf9] via-[#f9f3ef] to-[#f4ebe1] relative z-10 border-t border-cocoa/5 min-h-[80vh] flex flex-col justify-center overflow-hidden">
+    <section className="py-20 sm:py-32 px-4 bg-gradient-to-b from-[#fdfbf9] via-[#f9f3ef] to-[#f4ebe1] relative z-10 border-t border-cocoa/5 min-h-[75vh] md:min-h-[80vh] flex flex-col justify-center overflow-hidden">
       <BuntingBanner />
       <div className="max-w-4xl mx-auto text-center w-full relative z-10">
         {!candlesBlown ? (
@@ -116,8 +116,8 @@ export const InteractiveCake: React.FC<CakeProps> = ({ prompt, wishMessage, post
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-ballet text-accent-purple mb-4">{prompt[0]}</h2>
-            <p className="text-2xl font-windsong text-slate-500 mb-16">{prompt[1]}</p>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-ballet text-accent-purple mb-3 md:mb-4">{prompt[0]}</h2>
+            <p className="text-lg sm:text-2xl font-windsong text-slate-500 mb-8 sm:mb-16">{prompt[1]}</p>
             
             <div className="relative w-64 h-64 mx-auto cursor-pointer group" onClick={handleBlow}>
               {/* Red Velvet Cake Design */}
@@ -168,8 +168,8 @@ export const InteractiveCake: React.FC<CakeProps> = ({ prompt, wishMessage, post
             transition={{ duration: 1, ease: "easeOut" }}
             className="text-center absolute left-0 w-full top-1/2 -translate-y-1/2 pointer-events-none z-20 px-4"
           >
-            <h2 className="text-5xl md:text-7xl font-serif text-cocoa mb-6 drop-shadow-sm">{postBlowMessage}</h2>
-            <p className="text-2xl md:text-3xl font-serif italic text-cocoa/70">{wishMessage}</p>
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif text-cocoa mb-4 md:mb-6 drop-shadow-sm">{postBlowMessage}</h2>
+            <p className="text-lg sm:text-2xl md:text-3xl font-serif italic text-cocoa/70">{wishMessage}</p>
           </motion.div>
         )}
       </div>

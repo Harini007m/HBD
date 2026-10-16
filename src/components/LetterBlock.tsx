@@ -20,7 +20,7 @@ export const LetterBlock: React.FC<LetterBlockProps> = ({ heading, paragraphs })
   };
 
   return (
-    <section className="py-32 px-4 min-h-screen flex justify-center items-center relative z-10">
+    <section className="py-20 sm:py-32 px-4 min-h-screen flex justify-center items-center relative z-10">
       {/* Vintage Script Background Overlay */}
       <div
         className="absolute inset-0 z-0 opacity-[0.25] mix-blend-multiply pointer-events-none"
@@ -45,7 +45,7 @@ export const LetterBlock: React.FC<LetterBlockProps> = ({ heading, paragraphs })
             style={{ perspective: "1200px" }}
           >
             <div
-              className="relative w-[320px] h-[220px] sm:w-[400px] sm:h-[260px] cursor-pointer group"
+              className="relative w-[min(320px,88vw)] h-[min(220px,60vw)] sm:w-[400px] sm:h-[260px] cursor-pointer group"
               onClick={handleOpen}
             >
               {/* Pulsing prompt */}
@@ -124,11 +124,11 @@ export const LetterBlock: React.FC<LetterBlockProps> = ({ heading, paragraphs })
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl w-full glass-panel p-10 md:p-16 rounded-3xl relative overflow-hidden"
+            className="max-w-3xl w-full glass-panel p-6 sm:p-10 md:p-16 rounded-3xl relative overflow-hidden"
           >
             <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
-            <h2 className="text-5xl md:text-6xl font-serif text-cocoa mb-10 text-center drop-shadow-sm">{heading}</h2>
-            <div className="space-y-6 font-sans text-lg md:text-xl text-cocoa/90 leading-relaxed relative z-10 font-light">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif text-cocoa mb-6 md:mb-10 text-center drop-shadow-sm">{heading}</h2>
+            <div className="space-y-4 sm:space-y-6 font-sans text-base sm:text-lg md:text-xl text-cocoa/90 leading-relaxed relative z-10 font-light">
               {paragraphs.map((p, idx) => (
                 <p key={idx}>{p}</p>
               ))}

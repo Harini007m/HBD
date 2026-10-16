@@ -95,7 +95,7 @@ const ParallaxSection = ({ reason, idx }: { reason: typeof coreReasons[0], idx: 
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.9]);
 
   return (
-    <div ref={ref} className="min-h-[80vh] flex items-center justify-center relative w-full overflow-hidden py-20 px-4">
+    <div ref={ref} className="min-h-[60vh] md:min-h-[80vh] flex items-center justify-center relative w-full overflow-hidden py-12 md:py-20 px-4">
       {/* Background Decorative Blob */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [-100, 200]) }}
@@ -120,12 +120,12 @@ const ParallaxSection = ({ reason, idx }: { reason: typeof coreReasons[0], idx: 
         </motion.div>
       )}
 
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 relative z-10">
+      <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-16 relative z-10 w-full">
 
         {/* Floating Number (Rose Gold Shimmer) */}
         <motion.div 
           style={{ y: yNumber, opacity }}
-          className={`font-serif text-[12rem] md:text-[20rem] leading-none drop-shadow-md select-none ${idx % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}
+          className={`font-serif text-[5rem] sm:text-[8rem] md:text-[20rem] leading-none drop-shadow-md select-none ${idx % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}
         >
           <motion.span
             className="text-transparent bg-clip-text bg-gradient-to-r from-[#9f6a59]/30 via-rose/40 to-[#9f6a59]/30"
@@ -140,7 +140,7 @@ const ParallaxSection = ({ reason, idx }: { reason: typeof coreReasons[0], idx: 
         {/* Text Content */}
         <motion.div 
           style={{ y: yText, opacity, scale }}
-          className={`relative z-20 glass-panel p-10 md:py-14 md:px-12 ${idx % 2 === 0 ? 'md:pr-32 lg:pr-40 md:order-2' : 'md:pl-32 lg:pl-40 md:order-1'} rounded-3xl max-w-xl lg:max-w-2xl text-center md:text-left`}
+          className={`relative z-20 glass-panel p-6 sm:p-10 md:py-14 md:px-12 ${idx % 2 === 0 ? 'md:pr-32 lg:pr-40 md:order-2' : 'md:pl-32 lg:pl-40 md:order-1'} rounded-3xl w-full max-w-xl lg:max-w-2xl text-center md:text-left`}
         >
 
           <div className="relative z-10">
@@ -149,7 +149,7 @@ const ParallaxSection = ({ reason, idx }: { reason: typeof coreReasons[0], idx: 
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-serif text-4xl md:text-5xl text-cocoa mb-6"
+              className="font-serif text-2xl sm:text-4xl md:text-5xl text-cocoa mb-4 md:mb-6"
             >
               {reason.title}
             </motion.h2>
@@ -159,7 +159,7 @@ const ParallaxSection = ({ reason, idx }: { reason: typeof coreReasons[0], idx: 
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="font-sans text-lg md:text-xl text-cocoa/80 leading-relaxed font-light"
+              className="font-sans text-base sm:text-lg md:text-xl text-cocoa/80 leading-relaxed font-light"
             >
               {reason.desc}
             </motion.p>
@@ -222,7 +222,7 @@ export const Reasons: React.FC = () => {
           transition={{ duration: 1 }}
         >
           <p className="font-script text-4xl text-[#9f6a59] mb-4">the real reasons</p>
-          <h1 className="font-serif text-6xl md:text-7xl text-cocoa tracking-tight drop-shadow-sm">Why I Adore You</h1>
+          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-cocoa tracking-tight drop-shadow-sm">Why I Adore You</h1>
         </motion.div>
       </header>
 

@@ -16,18 +16,23 @@ export type Page = 'home' | 'memories' | 'reasons' | 'letter' | 'cake';
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
+  const handleNavigate = (page: Page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   return (
-    <div className="min-h-screen font-sans animated-gradient-bg overflow-hidden text-cocoa">
+    <div className="min-h-screen font-sans animated-gradient-bg overflow-x-hidden text-cocoa">
       <CustomCursor />
       <div className="floating-bg"></div>
       
-      <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
+      <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
       
       <main className="min-h-screen">
         <AnimatePresence mode="wait">
           {currentPage === 'home' && (
             <motion.div key="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <HeroSection onNavigate={setCurrentPage} />
+              <HeroSection onNavigate={handleNavigate} />
               <FloatingHearts />
             </motion.div>
           )}

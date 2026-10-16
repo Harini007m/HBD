@@ -19,7 +19,7 @@ export const AutoSlider: React.FC<AutoSliderProps> = ({ items }) => {
         {duplicatedItems.map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="flex-shrink-0 w-64 md:w-80 h-80 md:h-96 mx-4 relative group cursor-pointer overflow-hidden rounded-2xl shadow-md border border-white/40"
+            className="flex-shrink-0 w-56 sm:w-64 md:w-80 h-72 sm:h-80 md:h-96 mx-2 sm:mx-4 relative group cursor-pointer overflow-hidden rounded-2xl shadow-md border border-white/40"
             onClick={() => setSelectedItem(item)}
           >
             <img
@@ -30,8 +30,8 @@ export const AutoSlider: React.FC<AutoSliderProps> = ({ items }) => {
             {/* Subtle gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-cocoa/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute bottom-4 left-4 right-4 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="font-script text-2xl text-[#f9f5f0] drop-shadow-md">{item.date}</p>
-              <p className="font-sans text-sm text-white font-medium drop-shadow-md truncate">{item.caption}</p>
+              <p className="font-script text-xl sm:text-2xl text-[#f9f5f0] drop-shadow-md">{item.date}</p>
+              <p className="font-sans text-xs sm:text-sm text-white font-medium drop-shadow-md truncate">{item.caption}</p>
             </div>
           </div>
         ))}
@@ -55,7 +55,7 @@ export const AutoSlider: React.FC<AutoSliderProps> = ({ items }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 md:p-8"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-3 sm:p-6 md:p-8"
             onClick={() => setSelectedItem(null)}
           >
             <motion.div
@@ -63,12 +63,12 @@ export const AutoSlider: React.FC<AutoSliderProps> = ({ items }) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ duration: 0.4, type: 'spring', bounce: 0.2 }}
-              className="relative w-full max-w-5xl bg-[#f9f5f0] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row"
+              className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-[#f9f5f0] rounded-2xl sm:rounded-[2rem] shadow-2xl flex flex-col md:flex-row"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
-                className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-white/50 hover:bg-white backdrop-blur-md rounded-full text-cocoa transition-colors"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-white/70 hover:bg-white backdrop-blur-md rounded-full text-cocoa transition-colors shadow-sm"
                 onClick={() => setSelectedItem(null)}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,7 +77,7 @@ export const AutoSlider: React.FC<AutoSliderProps> = ({ items }) => {
               </button>
 
               {/* Image Section */}
-              <div className="w-full md:w-1/2 h-64 md:h-[600px] bg-black/5 flex items-center justify-center p-4">
+              <div className="w-full md:w-1/2 h-56 sm:h-72 md:h-[600px] bg-black/5 flex items-center justify-center p-3 sm:p-4">
                 <img
                   src={selectedItem.url}
                   alt={selectedItem.caption}
@@ -86,17 +86,17 @@ export const AutoSlider: React.FC<AutoSliderProps> = ({ items }) => {
               </div>
 
               {/* Text Content Section */}
-              <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-[#f8edeb]">
-                <p className="font-script text-3xl md:text-4xl text-[#9f6a59] mb-2">
+              <div className="w-full md:w-1/2 p-5 sm:p-8 md:p-12 flex flex-col justify-center bg-[#f8edeb]">
+                <p className="font-script text-2xl sm:text-3xl md:text-4xl text-[#9f6a59] mb-1 sm:mb-2">
                   {selectedItem.date}
                 </p>
-                <h3 className="font-serif text-4xl md:text-5xl text-cocoa mb-8 leading-tight">
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl text-cocoa mb-4 md:mb-8 leading-tight">
                   {selectedItem.caption}
                 </h3>
                 
                 <div className="relative">
-                  <div className="absolute -top-6 -left-4 text-6xl text-cocoa/10 font-serif">"</div>
-                  <p className="font-sans text-lg md:text-xl text-cocoa/80 leading-relaxed font-medium relative z-10">
+                  <div className="absolute -top-5 -left-3 text-4xl sm:text-6xl text-cocoa/10 font-serif">"</div>
+                  <p className="font-sans text-sm sm:text-base md:text-lg text-cocoa/80 leading-relaxed font-medium relative z-10">
                     {selectedItem.description}
                   </p>
                 </div>

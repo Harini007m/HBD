@@ -7,7 +7,6 @@ import { MemoryGallery } from './components/MemoryGallery';
 import { VideoMemories } from './components/VideoMemories';
 import { FloatingHearts } from './components/FloatingHearts';
 import { InteractiveCake } from './components/InteractiveCake';
-import { MusicPlayer } from './components/MusicPlayer';
 import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
 import { Reasons } from './components/Reasons';
@@ -71,8 +70,7 @@ function App() {
         </AnimatePresence>
       </main>
       
-      {/* Keeping music playing across all pages once started */}
-      <MusicPlayer src={siteContent.music.src} shouldPlay={true} />
+
     </div>
   );
 }
